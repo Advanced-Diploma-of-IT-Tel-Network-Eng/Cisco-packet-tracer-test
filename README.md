@@ -1,9 +1,6 @@
-# Cisco-packet-tracer
-Cisco Packet tracer - technical exercise for learneaning
-
-
-
 # VLANS - CISCO PACKET TRACER
+
+Cisco Packet tracer - technical exercise for learneaning
 
 
 ## Target Topology
