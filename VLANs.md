@@ -74,9 +74,9 @@ Usar dos Switches y configurar VLANS que se comparten entre los dos.
         - SWitchport MODe TRUNK
         - EXIT
     2. Switch0 CLI
-    - ENABLE
-    - CONFIGURE TERMINAL
-    - INTERface F0/2
-    - SWitchport MODe TRUNK
-    - EXIT
+        - ENABLE
+        - CONFIGURE TERMINAL
+        - INTERface F0/2
+        - SWitchport MODe TRUNK
+        - EXIT
 
