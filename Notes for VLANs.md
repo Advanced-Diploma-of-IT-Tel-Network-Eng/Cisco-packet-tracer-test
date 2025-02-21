@@ -1,6 +1,9 @@
 # VLANS - CISCO PACKET TRACER
 
 
+## Target Topology
+![alt text](<Screenshot from 2025-02-21 20-42-06.png>)
+
 ## 1 CREAR VLANs (VLAN10 - VLAN20)
 
 - Switches
