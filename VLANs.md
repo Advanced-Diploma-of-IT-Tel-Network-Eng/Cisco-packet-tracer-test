@@ -9,7 +9,7 @@
 
 - PCs
     - PC0 - 192.168.10.10 (VLAN10) fa0/10
-    - PC1 - 192.168.10.20 (VLAN20) fa0/20
+    - PC1 - 192.168.20.10 (VLAN20) fa0/20
 
 Config vlan:
 
@@ -38,7 +38,7 @@ Config vlan:
     - EXIT
     - SHOW VLAN
 
-## VLANs con dos Switches (trunker)
+## Misma VLAN con dos Switches diferentes (trunk)
 
 Usar dos Switches y configurar VLANS que se comparten entre los dos.
 
@@ -52,7 +52,7 @@ Usar dos Switches y configurar VLANS que se comparten entre los dos.
 
 1. Switches Connection
     - Cable: Copper cross over
-    - Ports: SW0 fa0/2 -- SW1 fa0/3
+    - interfaces: SW0 fa0/2 -- SW1 fa0/3
 2. Set up VLAN10 on SW1 (sin rangos)
     1. Switch - CLI - CREATE, ENABLE, set Ports
         - ENABLE
@@ -80,3 +80,37 @@ Usar dos Switches y configurar VLANS que se comparten entre los dos.
         - SWitchport MODe TRUNK
         - EXIT
 
+Routers
+    - Router0 
+
+1. Connections
+    - Cable: Copper Straight through
+    - interfaces: SW0 fa0/1 -- RT0 fa0/0
+2. Router - Set up interfaces to share traffic
+    - ENABLE
+    - CONFIgure TErminal
+    - interface fa0/0
+    - no shutdown
+    - EXIT
+    - CREAR SUB INTERface VLAN10
+        - se puede usar cualquier valor en fa0/1.X, se recomienda usar el ID de la VLAN a configurar.
+            - interface fa0/0.10
+        - usar el ID de la VLAN en dot1Q X
+            - encapsulation dot1Q 10
+        - asignar IP para identificar la VLAN
+            - ip address 192.168.10.1 255.255.255.0
+        - EXIT
+    - CREAR SUB INTERface VLAN20
+        - interface fa0/0.20
+        - encapsulation dot1Q 20
+        - ip address 192.168.20.1 255.255.255.0
+        - EXIT
+3. Switch - Set up trunk interface
+    - CLI
+    - ENABLE
+    - CONFIgure TErminal
+    - interface fa0/1
+    - SWitchport MODe trunk
+    - EXIT
+    - EXIT
+    - EXIT
