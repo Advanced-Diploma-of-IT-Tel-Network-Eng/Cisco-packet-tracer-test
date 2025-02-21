@@ -1,5 +1,6 @@
 # VLANS - CISCO PACKET TRACER
 
+
 ## 1 CREAR VLANs (VLAN10 - VLAN20)
 
 - Switches
@@ -37,10 +38,14 @@ Config vlan:
     - EXIT
     - EXIT
     - SHOW VLAN
+3. TEST
 
-## 2 Crear VLANs usando dos Switches (trunk)
+Al enviar un paquete entre VLANs diferentes debe fallar
 
-Usar dos Switches y configurar VLANS que se comparten entre los dos.
+
+## 2 Crear VLANs de dos Switches (trunk)
+
+Usar dos Switches y configurar las misma VLAN para colocar dipositivos de diferentes redes en la misma VLAN.
 
 
 - Switches
@@ -79,6 +84,14 @@ Usar dos Switches y configurar VLANS que se comparten entre los dos.
         - INTERface F0/2
         - SWitchport MODe TRUNK
         - EXIT
+4. TEST
+
+Al enviar un paquete entre VLANs diferentes debe fallar y entre PCs de la misma VLAN de diferente Swtich debe ser exitoso.
+
+
+## 3 Enviar paquetes entre dos VLANs diferentes (router on a stick)
+
+Usar un router para enviar paquetes entre dos VLANs diferentes. Las IP de las sub-interfaces se usan como Gateway para VLAN.
 
 Routers
     - Router0 
@@ -92,7 +105,7 @@ Routers
     - interface fa0/0
     - no shutdown
     - EXIT
-    - CREAR SUB INTERface VLAN10
+    - CREAR SUB-INTERface VLAN10
         - se puede usar cualquier valor en fa0/1.X, se recomienda usar el ID de la VLAN a configurar.
             - interface fa0/0.10
         - usar el ID de la VLAN en dot1Q X
@@ -100,7 +113,7 @@ Routers
         - asignar IP para identificar la VLAN
             - ip address 192.168.10.1 255.255.255.0
         - EXIT
-    - CREAR SUB INTERface VLAN20
+    - CREAR SUB-INTERface VLAN20
         - interface fa0/0.20
         - encapsulation dot1Q 20
         - ip address 192.168.20.1 255.255.255.0
@@ -114,3 +127,13 @@ Routers
     - EXIT
     - EXIT
     - EXIT
+4. Configure Gateway devices
+   1. Devices VLAN10
+    - PC0 - 192.168.10.1
+    - PC2 - 192.168.10.1
+   2. Devices VLAN20
+      - PC01 - 192.168.20.1
+5. TEST
+
+Enviar paquetes entre VLANs diferentes debe fallar pero al hacer PING debe ser exitoso.
+      
