@@ -1,6 +1,6 @@
 # VLANS - CISCO PACKET TRACER
 
-## CREAR VLAN (VLAN10 - VLAN20)
+## 1 CREAR VLANs (VLAN10 - VLAN20)
 
 - Switches
     - Switch0 (rangos)
@@ -38,7 +38,7 @@ Config vlan:
     - EXIT
     - SHOW VLAN
 
-## Misma VLAN con dos Switches diferentes (trunk)
+## 2 Crear VLANs usando dos Switches (trunk)
 
 Usar dos Switches y configurar VLANS que se comparten entre los dos.
 
@@ -66,7 +66,7 @@ Usar dos Switches y configurar VLANS que se comparten entre los dos.
         - EXIT
         - EXIT
         - SHOW VLAN
-3. Set up connection (TRUNK) between bith Switches
+3. Set up connection (TRUNK) between both Switches
     1. Switch1 CLI
         - ENABLE
         - CONFIGURE TERMINAL
