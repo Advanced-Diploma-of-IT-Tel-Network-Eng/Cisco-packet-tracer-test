@@ -1,1 +1,45 @@
-.bak
+# Archivos temporales de Word, Excel, PowerPoint
+~$*
+*.tmp
+*.temp
+*.bak
+*.wbk
+*.asd
+*.lnk
+*.lock
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Archivos de Office temporales y de autosalvado
+*.~*
+*.xlsb
+*.xlk
+*.xar
+*.wbk
+*.pptx~
+*.docx~
+*.xlsx~
+*.accdb~
+*.ldb
+
+# Archivos ocultos del sistema
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Archivos de respaldo de editores
+*.bak
+*.old
+*.orig
+*.backup
+
+# Archivos de Mac y Linux
+*.DS_Store
+._*
+*.swp
+*~
+
+# Archivos de VS Code (si usas)
+.vscode/
